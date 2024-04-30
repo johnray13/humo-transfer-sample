@@ -1,0 +1,59 @@
+package ru.appsmile.humo_transfer_sample
+
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.Toast
+import ru.appsmile.humo_transfer_sample.FourthActivity
+import ru.appsmile.humo_transfer_sample.databinding.ActivityFourthBinding
+import ru.appsmile.humo_transfer_sample.extra.FourDigitFormatText
+
+
+class FourthActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityFourthBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+
+        binding = ActivityFourthBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        val intent = intent
+        val nameCountry = intent.getStringExtra("name_country")
+        val initialCountry = intent.getStringExtra("initial_country")
+        val courseCountry = intent.getStringExtra("course_country")
+
+        binding.txtPerevod.text = "Перевод в $nameCountry"
+        binding.course.text = "1 TJS = $courseCountry $initialCountry"
+        binding.back.setOnClickListener {
+            finish()
+        }
+
+        binding.transfer4.setOnClickListener {
+
+            val cardNumber = binding.numberCard.text.toString()
+            val sum = binding.summ.text.toString()
+
+            if (cardNumber.length == 19) {
+                if (sum.isNotEmpty()) {
+                    Toast.makeText(this, "Перевод выполнен успешно", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, SecondActivity::class.java))
+                    finish()
+                } else {
+                    Toast.makeText(this, "Введите сумму", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(
+                    this,
+                    "Заполните правильно поля ввода номера карты",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            binding.numberCard.addTextChangedListener(FourDigitFormatText(binding.numberCard))
+        }
+    }
+}

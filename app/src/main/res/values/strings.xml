@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">HumoApp</string>
+    <string name="Pop_countries">Популярные страны</string>
+    <string name="new_facilities">Получите новые возможности для денежных переводов!</string>
+    <string name="av_upd">Доступно обновление</string>
+    <string name="sent_m">Отправить перевод</string>
+    <string name="txt_sent">Отправляйте денежные переводы зарубеж</string>
+    <string name="txt_main">Главная</string>
+    <string name="transfer">Переводы зарубеж</string>
+    <string name="tjk">Таджикистан</string>
+    <string name="Uslovie">Настоящим, я соглашаюсь и принимаю \nусловия описанные в <b><u>Лицензионном \nсоглашении</u></b> и, <b><u>Публичной оферте</u></b> и <u><b>Политике конфиденциальности</b></u></string>
+    <string name="info1">Укажите номер вашего телефона, мы пришлем СМС для входа в приложение</string>
+    <string name="num1">Номер телефона</string>
+    <string name="Close">Закрыть</string>
+    <string name="SentUzb">Перевод Узбекистан</string>
+    <string name="CardNum">Номер карты получателя</string>
+    <string name="example_card_number">4444 4444 4444 4444</string>
+    <string name="continue_text">Продолжить</string>
+    <string name="Cancel">Отмена</string>
+</resources>
